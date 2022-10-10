@@ -54,23 +54,25 @@ public class Employee {
     public static String printSalaryCosts(Employee[] employees){
         int sum = 0;
         for (Employee salary: employees) {
-            sum += salary.salary;
+                sum += salary.salary;
         }
         return sum + " рублей.";
     }
     // Среднее значение зарплат
     public static String printAverageSalary(Employee[] employees){
         int sum = 0;
+        int counter = 0;
         for (Employee salary: employees) {
             sum += salary.salary;
+            counter++;
         }
-        return sum / employees.length + " рублей.";
+        return sum / counter + " рублей.";
     }
     // Поиск сотрудника с минимальной зарплатой
     public static String searchEmployeeMinSalary(Employee[] employees){
         int min = employees[0].salary;
         String fio = employees[0].toString();
-        for (int i = 0; i < employees.length; i++) {
+        for (int i = 1; i < employees.length; i++) {
             if (employees[i].salary < min){
                 min = employees[i].salary;
                 fio = employees[i].toString();
@@ -83,7 +85,7 @@ public class Employee {
     public static String searchEmployeeMaxSalary(Employee[] employees){
         int max = employees[0].salary;
         String fio = employees[0].toString();
-        for (int i = 0; i < employees.length; i++) {
+        for (int i = 1; i < employees.length; i++) {
             if (employees[i].salary > max){
                 max = employees[i].salary;
                 fio = employees[i].toString();
@@ -92,14 +94,9 @@ public class Employee {
         return fio;
     }
     //Вывод ФИО всех сотрудников
-    public static String printFullNameAllEmployees(Employee[] employees) {
-        String fullName1 = "";
+    public static void printFullNameAllEmployees(Employee[] employees) {
         for (Employee fullName : employees) {
-            fullName1 += fullName.fullName + System.lineSeparator();
-
+            System.out.println(fullName.fullName);
         }
-        return fullName1;
     }
-
-
 }

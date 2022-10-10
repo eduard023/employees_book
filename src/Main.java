@@ -18,7 +18,7 @@ public class Main {
         System.out.println("Сотрудник с минимальной заработной платой: " + Employee.searchEmployeeMinSalary(employees));
         System.out.println("Сотрудник с максимальной заработной платой: " + Employee.searchEmployeeMaxSalary(employees));
         System.out.println("Среднее значение зарплат: " + Employee.printAverageSalary(employees));
-        System.out.println("Список ФИО всех сотрудников:\n" + Employee.printFullNameAllEmployees(employees));
+        Employee.printFullNameAllEmployees(employees);
     }
 
 }
